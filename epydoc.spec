@@ -10,7 +10,6 @@ Source0:	http://dl.sourceforge.net/epydoc/%{name}-%{version}.tar.gz
 Patch0:		%{name}-failed_identifiers.patch
 URL:		http://epydoc.sourceforge.net/
 BuildRequires:	python-modules >= 2.2.1
-BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
