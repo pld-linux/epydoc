@@ -2,11 +2,12 @@ Summary:	Tool for generating API documentation for Python modules
 Summary(pl):	Narzêdzie do generowania dokumentacji API modu³ów Pythona
 Name:		epydoc
 Version:	2.1
-Release:	1
+Release:	2
 License:	MIT
 Group:		Development/Languages/Python
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	94c494426c47496ee4d1ed26b580a5a7
+Patch0:		%{name}-failed_identifiers.patch
 URL:		http://epydoc.sourceforge.net/
 BuildRequires:	python-modules >= 2.2.1
 BuildRequires:	rpm-pythonprov
@@ -65,6 +66,7 @@ Ten pakiet zawiera graficzny interfejs u¿ytkownika (GUI) dla epydoc.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 python setup.py build
