@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.python
 Summary:	Tool for generating API documentation for Python modules
 Summary(pl):	Narzêdzie do generowania dokumentacji API modu³ów Pythona
 Name:		epydoc
