@@ -5,7 +5,7 @@ Version:	2.1
 Release:	2
 License:	MIT
 Group:		Development/Languages/Python
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/epydoc/%{name}-%{version}.tar.gz
 # Source0-md5:	94c494426c47496ee4d1ed26b580a5a7
 Patch0:		%{name}-failed_identifiers.patch
 URL:		http://epydoc.sourceforge.net/
