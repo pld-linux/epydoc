@@ -1,0 +1,12 @@
+diff -dur epydoc-2.1.orig/epydoc/html.py epydoc-2.1/epydoc/html.py
+--- epydoc-2.1.orig/epydoc/html.py	2004-03-19 20:03:18.000000000 +0100
++++ epydoc-2.1/epydoc/html.py	2004-09-11 21:51:10.668989027 +0200
+@@ -512,7 +512,7 @@
+         if self._failed_xrefs:
+             estr = 'Warning: Failed identifier crossreference targets:\n'
+             failed_identifiers = self._failed_xrefs.keys()
+-            failed_identifiers.sort(lambda a,b: cmp(a[1],b[1]))
++            failed_identifiers.sort()
+             for identifier in failed_identifiers:
+                 uids = self._failed_xrefs[identifier].keys()
+                 uids.sort()
