@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.python
-
 Summary:	Tool for generating API documentation for Python modules
+Summary(pl):	Narzêdzie do generowania dokumentacji API modu³ów Pythona
 Name:		epydoc
 Version:	2.0
 Release:	1
@@ -16,30 +16,53 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Epydoc is a tool for generating API documentation for Python modules, based
-on their docstrings. For an example of epydoc's output, see the API
-documentation for epydoc itself (html, pdf). A lightweight markup language
-called epytext can be used to format docstrings and to add information
-about specific fields, such as parameters and instance variables.  Epydoc
-also understands docstrings written in ReStructuredText, Javadoc and
-plaintext.
+epydoc is a tool for generating API documentation for Python modules,
+based on their docstrings. For an example of epydoc's output, see the
+API documentation for epydoc itself (html, pdf). A lightweight markup
+language called epytext can be used to format docstrings and to add
+information about specific fields, such as parameters and instance
+variables. epydoc also understands docstrings written in
+ReStructuredText, Javadoc and plaintext.
+
+%description -l pl
+epydoc jest narzêdziem do generowania dokumentacji API modu³ów Pythona
+w oparciu o ich wewnêtrzne opisy (docstrings). Jako przyk³ad wyniku
+jego dzia³ania mo¿na obejrzeæ jego w³asn± dokumentacjê (html, pdf).
+epytext wywo³ywany przez prosty jêzyk znaczników mo¿e s³u¿yæ do
+formatowania wewnêtrznyvh opisów oraz do dodawania informacji o
+konkretnych polach, takich jak parametry i zmienne instancji. epydoc
+rozumie równie¿ wewnêtrzne opisy stworzone w ReStructuredText, Javadoc
+i w postaci czystego tekstu.
 
 %package gui
-Summary:	GUI for Epydoc
+Summary:	GUI for epydoc
+Summary(pl):	Interfejs graficzny dla epydoc
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}
 %pyrequires_eq	python-tkinter
 
 %description gui
-Epydoc is a tool for generating API documentation for Python modules, based
-on their docstrings. For an example of epydoc's output, see the API
-documentation for epydoc itself (html, pdf). A lightweight markup language
-called epytext can be used to format docstrings and to add information
-about specific fields, such as parameters and instance variables.  Epydoc
-also understands docstrings written in ReStructuredText, Javadoc and
-plaintext.
+epydoc is a tool for generating API documentation for Python modules,
+based on their docstrings. For an example of epydoc's output, see the
+API documentation for epydoc itself (html, pdf). A lightweight markup
+language called epytext can be used to format docstrings and to add
+information about specific fields, such as parameters and instance
+variables. epydoc also understands docstrings written in
+ReStructuredText, Javadoc and plaintext.
 
-This package contains GUI program for Epydoc.
+This package contains GUI program for epydoc.
+
+%description gui -l pl
+epydoc jest narzêdziem do generowania dokumentacji API modu³ów Pythona
+w oparciu o ich wewnêtrzne opisy (docstrings). Jako przyk³ad wyniku
+jego dzia³ania mo¿na obejrzeæ jego w³asn± dokumentacjê (html, pdf).
+epytext wywo³ywany przez prosty jêzyk znaczników mo¿e s³u¿yæ do
+formatowania wewnêtrznyvh opisów oraz do dodawania informacji o
+konkretnych polach, takich jak parametry i zmienne instancji. epydoc
+rozumie równie¿ wewnêtrzne opisy stworzone w ReStructuredText, Javadoc
+i w postaci czystego tekstu.
+
+Ten pakiet zawiera graficzny interfejs u¿ytkownika (GUI) dla epydoc.
 
 %prep
 %setup -q
