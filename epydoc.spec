@@ -1,12 +1,12 @@
 Summary:	Tool for generating API documentation for Python modules
 Summary(pl):	Narzêdzie do generowania dokumentacji API modu³ów Pythona
 Name:		epydoc
-Version:	2.0
+Version:	2.1
 Release:	1
 License:	MIT
 Group:		Development/Languages/Python
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	fbb0bd482a872795c59f897b699f9549
+# Source0-md5:	94c494426c47496ee4d1ed26b580a5a7
 URL:		http://epydoc.sourceforge.net/
 BuildRequires:	python-modules >= 2.2.1
 BuildRequires:	rpm-pythonprov
@@ -77,6 +77,8 @@ python setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
 
 install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
+find $RPM_BUILD_ROOT%{py_sitescriptdir} -name "*.py" | xargs rm
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -85,18 +87,20 @@ rm -rf $RPM_BUILD_ROOT
 %doc doc/*
 %attr(755,root,root) %{_bindir}/epydoc
 
-%dir %{py_sitedir}/epydoc
-%{py_sitedir}/epydoc/*.py[co]
-%exclude %{py_sitedir}/epydoc/gui.py[co]
+%dir %{py_sitescriptdir}/epydoc
+%{py_sitescriptdir}/epydoc/*.py[co]
+%dir %{py_sitescriptdir}/epydoc/test
+%{py_sitescriptdir}/epydoc/test/*.py[co]
+%exclude %{py_sitescriptdir}/epydoc/gui.py[co]
 
-%dir %{py_sitedir}/epydoc/markup
-%{py_sitedir}/epydoc/markup/*.py[co]
+%dir %{py_sitescriptdir}/epydoc/markup
+%{py_sitescriptdir}/epydoc/markup/*.py[co]
 
 %{_mandir}/man1/epydoc.*
 
 %files gui
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/epydocgui
-%{py_sitedir}/epydoc/gui.py[co]
+%{py_sitescriptdir}/epydoc/gui.py[co]
 
 %{_mandir}/man1/epydocgui.*
