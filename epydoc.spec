@@ -28,7 +28,7 @@ epydoc jest narzêdziem do generowania dokumentacji API modu³ów Pythona
 w oparciu o ich wewnêtrzne opisy (docstrings). Jako przyk³ad wyniku
 jego dzia³ania mo¿na obejrzeæ jego w³asn± dokumentacjê (html, pdf).
 epytext wywo³ywany przez prosty jêzyk znaczników mo¿e s³u¿yæ do
-formatowania wewnêtrznyvh opisów oraz do dodawania informacji o
+formatowania wewnêtrznych opisów oraz do dodawania informacji o
 konkretnych polach, takich jak parametry i zmienne instancji. epydoc
 rozumie równie¿ wewnêtrzne opisy stworzone w ReStructuredText, Javadoc
 i w postaci czystego tekstu.
@@ -56,7 +56,7 @@ epydoc jest narzêdziem do generowania dokumentacji API modu³ów Pythona
 w oparciu o ich wewnêtrzne opisy (docstrings). Jako przyk³ad wyniku
 jego dzia³ania mo¿na obejrzeæ jego w³asn± dokumentacjê (html, pdf).
 epytext wywo³ywany przez prosty jêzyk znaczników mo¿e s³u¿yæ do
-formatowania wewnêtrznyvh opisów oraz do dodawania informacji o
+formatowania wewnêtrznych opisów oraz do dodawania informacji o
 konkretnych polach, takich jak parametry i zmienne instancji. epydoc
 rozumie równie¿ wewnêtrzne opisy stworzone w ReStructuredText, Javadoc
 i w postaci czystego tekstu.
