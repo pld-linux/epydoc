@@ -28,7 +28,7 @@ plaintext.
 Summary:	GUI for Epydoc
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}
-%pyrequires_eq	tkinter
+%pyrequires_eq	python-tkinter
 
 %description gui
 Epydoc is a tool for generating API documentation for Python modules, based
