@@ -37,7 +37,7 @@ i w postaci czystego tekstu.
 Summary:	GUI for epydoc
 Summary(pl):	Interfejs graficzny dla epydoc
 Group:		Development/Languages/Python
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 %pyrequires_eq	python-tkinter
 
 %description gui
@@ -103,5 +103,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/epydocgui
 %{py_sitescriptdir}/epydoc/gui.py[co]
-
 %{_mandir}/man1/epydocgui.*
