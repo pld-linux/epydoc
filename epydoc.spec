@@ -2,7 +2,7 @@ Summary:	Tool for generating API documentation for Python modules
 Summary(pl):	Narzêdzie do generowania dokumentacji API modu³ów Pythona
 Name:		epydoc
 Version:	2.1
-Release:	3
+Release:	4
 License:	MIT
 Group:		Development/Languages/Python
 Source0:	http://dl.sourceforge.net/epydoc/%{name}-%{version}.tar.gz
