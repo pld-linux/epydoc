@@ -1,5 +1,5 @@
 Summary:	Tool for generating API documentation for Python modules
-Summary(pl.UTF-8):   Narzędzie do generowania dokumentacji API modułów Pythona
+Summary(pl.UTF-8):	Narzędzie do generowania dokumentacji API modułów Pythona
 Name:		epydoc
 Version:	2.1
 Release:	4
@@ -35,7 +35,7 @@ i w postaci czystego tekstu.
 
 %package gui
 Summary:	GUI for epydoc
-Summary(pl.UTF-8):   Interfejs graficzny dla epydoc
+Summary(pl.UTF-8):	Interfejs graficzny dla epydoc
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}-%{release}
 %pyrequires_eq	python-tkinter
