@@ -1,12 +1,13 @@
+%define beta beta1
 Summary:	Tool for generating API documentation for Python modules
 Summary(pl.UTF-8):	Narzędzie do generowania dokumentacji API modułów Pythona
 Name:		epydoc
-Version:	2.1
-Release:	4
+Version:	3.0
+Release:	0.%{beta}.1
 License:	MIT
 Group:		Development/Languages/Python
-Source0:	http://dl.sourceforge.net/epydoc/%{name}-%{version}.tar.gz
-# Source0-md5:	94c494426c47496ee4d1ed26b580a5a7
+Source0:	http://dl.sourceforge.net/epydoc/%{name}-%{version}%{beta}.zip
+# Source0-md5:	43e9f98002ddfd0fd91b2c5a9737da0f
 Patch0:		%{name}-failed_identifiers.patch
 URL:		http://epydoc.sourceforge.net/
 BuildRequires:	python-modules >= 2.2.1
@@ -64,8 +65,8 @@ i w postaci czystego tekstu.
 Ten pakiet zawiera graficzny interfejs użytkownika (GUI) dla epydoc.
 
 %prep
-%setup -q
-%patch0 -p1
+%setup -q -n %{name}-%{version}%{beta}
+#%patch0 -p1
 
 %build
 python setup.py build
@@ -78,7 +79,7 @@ python setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
 
 install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
-find $RPM_BUILD_ROOT%{py_sitescriptdir} -name "*.py" | xargs rm
+%py_postclean
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -86,18 +87,11 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc doc/*
-%attr(755,root,root) %{_bindir}/epydoc
-
-%dir %{py_sitescriptdir}/epydoc
-%{py_sitescriptdir}/epydoc/*.py[co]
-%dir %{py_sitescriptdir}/epydoc/test
-%{py_sitescriptdir}/epydoc/test/*.py[co]
-%exclude %{py_sitescriptdir}/epydoc/gui.py[co]
-
-%dir %{py_sitescriptdir}/epydoc/markup
-%{py_sitescriptdir}/epydoc/markup/*.py[co]
-
+%attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/epydoc.*
+%{py_sitescriptdir}/epydoc
+%{py_sitescriptdir}/*.egg-info
+%exclude %{py_sitescriptdir}/epydoc/gui.py[co]
 
 %files gui
 %defattr(644,root,root,755)
