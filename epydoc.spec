@@ -8,7 +8,6 @@ License:	MIT
 Group:		Development/Languages/Python
 Source0:	http://dl.sourceforge.net/epydoc/%{name}-%{version}%{beta}.zip
 # Source0-md5:	43e9f98002ddfd0fd91b2c5a9737da0f
-Patch0:		%{name}-failed_identifiers.patch
 URL:		http://epydoc.sourceforge.net/
 BuildRequires:	python-modules >= 2.2.1
 %pyrequires_eq	python-modules
@@ -66,7 +65,6 @@ Ten pakiet zawiera graficzny interfejs użytkownika (GUI) dla epydoc.
 
 %prep
 %setup -q -n %{name}-%{version}%{beta}
-#%patch0 -p1
 
 %build
 python setup.py build
