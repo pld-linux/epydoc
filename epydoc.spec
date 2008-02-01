@@ -9,6 +9,7 @@ Source0:	http://dl.sourceforge.net/epydoc/%{name}-%{version}.zip
 # Source0-md5:	43223b2139c59ec60f064564bea82bf4
 URL:		http://epydoc.sourceforge.net/
 BuildRequires:	python-modules >= 2.2.1
+BuildRequires:	unzip
 %pyrequires_eq	python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
