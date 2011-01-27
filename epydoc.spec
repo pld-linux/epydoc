@@ -5,10 +5,12 @@ Version:	3.0.1
 Release:	2
 License:	MIT
 Group:		Development/Languages/Python
-Source0:	http://dl.sourceforge.net/epydoc/%{name}-%{version}.zip
+Source0:	http://downloads.sourceforge.net/epydoc/%{name}-%{version}.zip
 # Source0-md5:	43223b2139c59ec60f064564bea82bf4
 URL:		http://epydoc.sourceforge.net/
+BuildRequires:	python
 BuildRequires:	python-modules >= 2.2.1
+BuildRequires:	rpm-pythonprov
 BuildRequires:	unzip
 %pyrequires_eq	python-modules
 BuildArch:	noarch
