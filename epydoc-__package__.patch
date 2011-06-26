@@ -1,0 +1,12 @@
+diff -dur epydoc-3.0.1.orig/epydoc/docintrospecter.py epydoc-3.0.1/epydoc/docintrospecter.py
+--- epydoc-3.0.1.orig/epydoc/docintrospecter.py	2008-01-29 13:21:22.000000000 +0100
++++ epydoc-3.0.1/epydoc/docintrospecter.py	2011-06-26 10:07:01.000000000 +0200
+@@ -185,7 +185,7 @@
+ #: module's API documentation.
+ UNDOCUMENTED_MODULE_VARS = (
+     '__builtins__', '__doc__', '__all__', '__file__', '__path__',
+-    '__name__', '__extra_epydoc_fields__', '__docformat__')
++    '__name__', '__extra_epydoc_fields__', '__docformat__', '__package__')
+ 
+ def introspect_module(module, module_doc, module_name=None, preliminary=False):
+     """
