@@ -1,0 +1,12 @@
+--- epydoc-3.0.1/epydoc/markup/restructuredtext.py.orig	2011-06-26 10:08:26.000000000 +0200
++++ epydoc-3.0.1/epydoc/markup/restructuredtext.py	2011-06-28 20:47:31.000000000 +0200
+@@ -493,7 +493,8 @@
+                     child = child[1:].lstrip()
+                 elif child[:2] in (' -', ' :'):
+                     child = child[2:].lstrip()
+-
++                fbody[0][0] = docutils.nodes.Text(child)
++            
+             # Wrap the field body, and add a new field
+             self._add_field(tagname, arg, fbody)
+         
