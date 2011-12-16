@@ -2,7 +2,7 @@ Summary:	Tool for generating API documentation for Python modules
 Summary(pl.UTF-8):	Narzędzie do generowania dokumentacji API modułów Pythona
 Name:		epydoc
 Version:	3.0.1
-Release:	5
+Release:	6
 License:	MIT
 Group:		Development/Languages/Python
 Source0:	http://downloads.sourceforge.net/epydoc/%{name}-%{version}.zip
@@ -32,18 +32,18 @@ ReStructuredText, Javadoc and plaintext.
 epydoc jest narzędziem do generowania dokumentacji API modułów Pythona
 w oparciu o ich wewnętrzne opisy (docstrings). Jako przykład wyniku
 jego działania można obejrzeć jego własną dokumentację (html, pdf).
-epytext wywoływany przez prosty język znaczników może służyć do
-formatowania wewnętrznych opisów oraz do dodawania informacji o
-konkretnych polach, takich jak parametry i zmienne instancji. epydoc
-rozumie również wewnętrzne opisy stworzone w ReStructuredText, Javadoc
-i w postaci czystego tekstu.
+Dostępny jest prosty język znaczników o nazwie epytext, który można
+wykorzystać do formatowania wewnętrznych opisów oraz do dodawania
+informacji o konkretnych polach, takich jak parametry i zmienne
+instancji. epydoc rozumie również wewnętrzne opisy stworzone w
+formatach ReStructuredText i Javadoc oraz w postaci czystego tekstu.
 
 %package gui
 Summary:	GUI for epydoc
 Summary(pl.UTF-8):	Interfejs graficzny dla epydoc
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}-%{release}
-%pyrequires_eq	python-tkinter
+Requires:	python-tkinter >= 2.2.1
 
 %description gui
 epydoc is a tool for generating API documentation for Python modules,
@@ -60,11 +60,11 @@ This package contains GUI program for epydoc.
 epydoc jest narzędziem do generowania dokumentacji API modułów Pythona
 w oparciu o ich wewnętrzne opisy (docstrings). Jako przykład wyniku
 jego działania można obejrzeć jego własną dokumentację (html, pdf).
-epytext wywoływany przez prosty język znaczników może służyć do
-formatowania wewnętrznych opisów oraz do dodawania informacji o
-konkretnych polach, takich jak parametry i zmienne instancji. epydoc
-rozumie również wewnętrzne opisy stworzone w ReStructuredText, Javadoc
-i w postaci czystego tekstu.
+Dostępny jest prosty język znaczników o nazwie epytext, który można
+wykorzystać do formatowania wewnętrznych opisów oraz do dodawania
+informacji o konkretnych polach, takich jak parametry i zmienne
+instancji. epydoc rozumie również wewnętrzne opisy stworzone w
+formatach ReStructuredText i Javadoc oraz w postaci czystego tekstu.
 
 Ten pakiet zawiera graficzny interfejs użytkownika (GUI) dla epydoc.
 
@@ -75,13 +75,15 @@ Ten pakiet zawiera graficzny interfejs użytkownika (GUI) dla epydoc.
 %patch2 -p1
 
 %build
-python setup.py build
+%{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
-python setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
+%{__python} setup.py install \
+	--optimize=2 \
+	--root=$RPM_BUILD_ROOT
 
 install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
@@ -93,14 +95,15 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc doc/*
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/epydoc.*
+%attr(755,root,root) %{_bindir}/apirst2html.py
+%attr(755,root,root) %{_bindir}/epydoc
+%{_mandir}/man1/epydoc.1*
 %{py_sitescriptdir}/epydoc
-%{py_sitescriptdir}/*.egg-info
 %exclude %{py_sitescriptdir}/epydoc/gui.py[co]
+%{py_sitescriptdir}/epydoc-%{version}-py*.egg-info
 
 %files gui
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/epydocgui
 %{py_sitescriptdir}/epydoc/gui.py[co]
-%{_mandir}/man1/epydocgui.*
+%{_mandir}/man1/epydocgui.1*
