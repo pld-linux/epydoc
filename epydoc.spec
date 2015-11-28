@@ -75,15 +75,13 @@ Ten pakiet zawiera graficzny interfejs użytkownika (GUI) dla epydoc.
 %patch2 -p1
 
 %build
-%{__python} setup.py build
+%py_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
-%{__python} setup.py install \
-	--optimize=2 \
-	--root=$RPM_BUILD_ROOT
+%py_install
 
 install man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
