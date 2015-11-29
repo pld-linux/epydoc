@@ -11,6 +11,7 @@ Patch0:		%{name}-rst.patch
 Patch1:		%{name}-__package__.patch
 Patch2:		%{name}-cons_fields_stripping.patch
 URL:		http://epydoc.sourceforge.net/
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	python
 BuildRequires:	python-modules >= 2.2.1
 BuildRequires:	rpm-pythonprov
