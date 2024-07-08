@@ -2,7 +2,7 @@ Summary:	Tool for generating API documentation for Python modules
 Summary(pl.UTF-8):	Narzędzie do generowania dokumentacji API modułów Pythona
 Name:		epydoc
 Version:	3.0.1
-Release:	6
+Release:	7
 License:	MIT
 Group:		Development/Languages/Python
 Source0:	http://downloads.sourceforge.net/epydoc/%{name}-%{version}.zip
@@ -74,6 +74,9 @@ Ten pakiet zawiera graficzny interfejs użytkownika (GUI) dla epydoc.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+
+%{__sed} -E -i -e '1s,#!\s*/usr/bin/env\s+python(\s|$),#!%{__python}\1,' \
+	scripts/epydoc scripts/epydoc.py scripts/apirst2html.py scripts/epydocgui
 
 %build
 %py_build
