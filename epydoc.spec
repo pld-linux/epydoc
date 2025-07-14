@@ -71,9 +71,9 @@ Ten pakiet zawiera graficzny interfejs użytkownika (GUI) dla epydoc.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
+%patch -P0 -p1
+%patch -P1 -p1
+%patch -P2 -p1
 
 %{__sed} -E -i -e '1s,#!\s*/usr/bin/env\s+python(\s|$),#!%{__python}\1,' \
 	scripts/epydoc scripts/epydoc.py scripts/apirst2html.py scripts/epydocgui
